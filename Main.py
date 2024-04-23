@@ -40,7 +40,7 @@ class IntrusionDetector:
 def main():
     mIntrusionDetector = IntrusionDetector()
 
-
+    print("Launching...")
 
     # .\Main.py --gui parameter will launch GUI version.
     # if len(sys.argv) > 1:

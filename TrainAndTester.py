@@ -21,7 +21,7 @@ class TrainTester:
         self.normaliser = Normalizer()
         self.analyzer = Analyzer()
         self.dataframe = dataframe
-        self.debug = True
+        self.debug = False
         self.output_path = "processed/"
 
     def train(self):
@@ -155,14 +155,6 @@ class TrainTester:
 
         if self.debug:
             self.analyzer.calculateDistribution(self.dataframe)
-
-            plt.figure(figsize=(8, 6))
-            sns.heatmap(confusion_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=SVM.classes_,
-                        yticklabels=SVM.classes_)
-            plt.xlabel('Predicted labels')
-            plt.ylabel('Actual labels')
-            plt.title('Confusion Matrix')
-            plt.show()
 
             print(f"Accuracy: {accuracy}")
             print(f"Classification Report:\n{report}")

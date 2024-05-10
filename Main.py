@@ -84,7 +84,7 @@ class IntrusionDetector:
         return True
 
     def print_menu(self):
-        print("1. Train model. \n2. Test dataset. \n3. Fetch optimised SVC parameters. 4. Quit\n")
+        print("1. Train model. \n2. Test dataset. \n3. Fetch optimised SVC parameters.\n 4. Quit\n")
 
 
 def main():
@@ -97,8 +97,7 @@ def main():
 
         csv_file_path = sys.argv[2]
 
-        #mIntrusionDetector.path = mIntrusionDetector.script_root + csv_file_path
-        mIntrusionDetector.path = os.path.join(os.path.dirname(mIntrusionDetector.script_root), "toProcess", 'Network-Logs-1.csv')
+        mIntrusionDetector.path = os.path.join(os.path.dirname(mIntrusionDetector.script_root), "toProcess", sys.argv[2])
         print(sys.argv[2])
         results = mIntrusionDetector.SVM_Test()
         print("Done!")
@@ -115,17 +114,14 @@ def main():
                 break
             if selection == 2:
                 # toProcess/Network-Logs-1.csv
-                #mIntrusionDetector.path = input("Enter dataset to test: ")
-
-                mIntrusionDetector.path = 'C:\\Users\\Uni\\Documents\\CTU-IoT-Malware-Capture-1-1conn.log.labeled.csv'
+                mIntrusionDetector.path = input("Enter dataset to test: ")
 
                 mIntrusionDetector.SVM_Test()
                 break
 
             if selection == 3:
 
-                #mIntrusionDetector.path = input("Enter dataset to test: ")
-                mIntrusionDetector.path = 'C:\\Users\\Uni\\Documents\\CTU-IoT-Malware-Capture-1-1conn.log.labeled.csv'
+                mIntrusionDetector.path = input("Enter dataset to test: ")
 
                 mIntrusionDetector.gridSearch()
                 break

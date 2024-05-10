@@ -106,27 +106,19 @@ def main():
         mIntrusionDetector.print_menu()
         selection = 1
         while selection < 4:
-            #selection = int(input("Enter option: "))
-            selection = 2
+            selection = int(input("Enter option: "))
             if selection == 1:
-                #mIntrusionDetector.path = input("Enter CSV path: ")
+                mIntrusionDetector.path = input("Enter CSV path: ")
                 mIntrusionDetector.SVM_Train()
                 break
             if selection == 2:
-                # toProcess/Network-Logs-1.csv
                 mIntrusionDetector.path = input("Enter dataset to test: ")
-
                 mIntrusionDetector.SVM_Test()
                 break
-
             if selection == 3:
-
                 mIntrusionDetector.path = input("Enter dataset to test: ")
-
                 mIntrusionDetector.gridSearch()
                 break
-
-
 
     print("Good bye!")
 
